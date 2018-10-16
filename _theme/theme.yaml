@@ -12,7 +12,6 @@ elements:
       - about
       - common
       - index
-      - news
       - post
     importer: blog_static_files
   custom_fields:
