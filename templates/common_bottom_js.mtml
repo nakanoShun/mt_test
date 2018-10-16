@@ -1,0 +1,12 @@
+<!-- PARENT script -->
+<script src="//cdn.jsdelivr.net/g/jquery@3.2.1,jquery@1.7.1"></script>
+<script src="<$mt:BlogRelativeURL$>common/js/common.js"></script>
+<mt:SetVarBlock name="pageurl"><$mt:PageBasename$></MTSetVarBlock>
+<mt:If name="pageurl" eq="">
+<script src="<$mt:BlogRelativeURL$>index/js/index.js"></script>
+デザインA...
+<mt:ElseIf name="pageurl" eq="about">
+<script src="<$mt:BlogRelativeURL$>common/js/addClass.js"></script>
+<script src="<$mt:BlogRelativeURL$>about/js/about.js"></script>
+デザインB...
+</mt:If>

@@ -1,0 +1,60 @@
+<!DOCTYPE html><$mt:Include module="config" strip_linefeeds="1"$>
+<html lang="<$mt:BlogLanguage$>" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="<$mt:PublishCharset$>">
+<title><$mt:EntryTitle encode_html="1"$> | <$mt:BlogName encode_html="1"$></title>
+<meta name="description" content="<$mt:EntryExcerpt$>">
+<meta name="keywords" content="<$mt:GetVar name="meta_keywords"$><$mt:EntryKeywords$>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" href="<$mt:BlogURL encode_html="1"$>images/favicon.ico">
+<link rel="start" href="<$mt:BlogURL encode_html="1"$>">
+<$mt:CanonicalLink$>
+<!-- Open Graph Protocol -->
+<meta property="og:type" content="article">
+<meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<mt:Else><$mt:Var name="blog_lang"$></mt:If>">
+<meta property="og:title" content="<$mt:EntryTitle encode_html="1"$> | <$mt:BlogName encode_html="1"$>">
+<meta property="og:url" content="<$mt:EntryPermalink encode_html="1"$>">
+<meta property="og:description" content="<$mt:EntryExcerpt$>">
+<meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+<meta property="og:image" content="<mt:EntryAssets type="image" sort_order="ascend" limit="1"><$mt:AssetThumbnailURL width="1200"$><mt:Else><$mt:BlogURL encode_html="1"$>images/ogimage.jpg</mt:EntryAssets>">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@<$mt:Var name='twitterVia'$>">
+<meta name="twitter:title" content="<$mt:EntryTitle encode_html="1"$>">
+<meta name="twitter:description" content="<$mt:EntryExcerpt remove_html="1" encode_html="1" words="100"$>">
+<meta name="twitter:image" content="<mt:EntryAssets type="image" sort_order="ascend" limit="1"><$mt:AssetThumbnailURL width="1200"$><mt:Else><$mt:BlogURL encode_html="1"$>images/ogimage.jpg</mt:EntryAssets>">
+
+<!-- Microdata -->
+<meta itemprop="description" content="<$mt:EntryExcerpt$>">
+<link itemprop="url" href="<$mt:EntryPermalink encode_html="1"$>">
+<link itemprop="image" href="<mt:EntryAssets type="image" sort_order="ascend" limit="1"><$mt:AssetThumbnailURL width="1200"$></mt:EntryAssets>">
+<$mt:Include module="common_stylesheet"$>
+</head>
+<body>
+<$mt:Include module="header"$>
+
+  <section class="UL-mainArea wysiwyg">
+    <div class="mt-container">
+      <p class="entry__pagename">記事</p>
+      <div class="entry__header">
+      <span class="entry__date">
+        <time datetime="<$mt:EntryDate format="%x"$>"><$mt:EntryDate format="%x"$></time>
+      </span>
+      <span class="entry__category">
+        <mt:EntryCategories><$mt:CategoryLabel encode_html="1"$></mt:EntryCategories>
+      </span>
+      </div>
+      <h2 class="entry__title"><$mt:EntryTitle encode_html="1"$></h2>
+      <div class="entry__text">
+        <$mt:EntryBody$>
+        <$mt:EntryMore$>
+      </div>
+    </div>
+  </section>
+  
+<$mt:Include module="gototop"$>
+<$mt:Include module="breadcrumbs"$>
+<$mt:Include module="footer"$>
+<$mt:Include module="common_bottom_js"$>
+</body>
+</html>

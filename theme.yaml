@@ -1,0 +1,203 @@
+id: "mt_test"
+label: "mt_test"
+version: "1.0.0"
+author_link: "https://ankh.movabletype.io/"
+author_name: "user_ankh"
+description: "mt_test"
+class: "blog"
+elements:
+  blog_static_files:
+    component: ~
+    data:
+      - about
+      - common
+      - index
+      - news
+      - post
+    importer: blog_static_files
+  custom_fields:
+    component: commercial
+    data:
+      imageposition:
+        default: ''
+        description: ''
+        name: メインイメージの配置
+        obj_type: page
+        options: 上に配置,下に配置,背景全体に配置
+        required: 0
+        type: radio
+      logo_images:
+        default: ''
+        description: メインイメージ上に表示されるタイトルロゴの画像をアップロードします。
+        name: ロゴ画像
+        obj_type: blog
+        options: ''
+        required: 0
+        type: asset_image
+      main_image_entry:
+        default: ''
+        description: 記事のサムネイルやog:imageとして表示させる画像です。
+        name: メインイメージ
+        obj_type: post
+        options: ''
+        required: 0
+        type: asset_image
+      main_images:
+        default: ''
+        description: "背景になる画像をアップロードします。\r\n全面に表示されるため、大きなサイズの画像がオススメです。"
+        name: メインイメージ
+        obj_type: blog
+        options: ''
+        required: 0
+        type: asset_image
+      pageimage:
+        default: ''
+        description: メインイメージの各ブロックに表示する画像です。（横幅は1280px程度を推奨）
+        name: メインイメージ
+        obj_type: page
+        options: ''
+        required: 0
+        type: asset_image
+      type_no:
+        default: ''
+        description: ''
+        name: 型番
+        obj_type: post
+        options: ''
+        required: 0
+        type: text
+    importer: custom_fields
+  field_display_options:
+    component: ~
+    data:
+      blog:
+        field.main_images:
+          display: default
+          order: 0
+      page:
+        excerpt:
+          display: default
+          order: 1
+        keywords:
+          display: default
+          order: 2
+        text:
+          display: default
+          order: 0
+      post:
+        excerpt:
+          display: default
+          order: 1
+        keywords:
+          display: default
+          order: 2
+        text:
+          display: default
+          order: 0
+    importer: field_display_options
+  template_set:
+    component: core
+    data:
+      base_path: templates
+      templates:
+        archive:
+          category_entry_listing:
+            filename: category_entry_listing.mtml
+            label: カテゴリ別記事リスト
+            mappings:
+              category:
+                archive_type: Category
+                file_template: "%-c/%i"
+                preferred: 1
+          yearly_entry_listing:
+            filename: yearly_entry_listing.mtml
+            label: 年別ブログ記事リスト
+            mappings:
+              yearly:
+                archive_type: Yearly
+                file_template: "%y/%i"
+                preferred: 1
+                start_month: 1
+        index:
+          common_css:
+            filename: common.css.mtml
+            label: 共通スタイル
+            outfile: common.css
+            rebuild_me: 1
+          entrylist:
+            filename: news.html.mtml
+            label: ニュース一覧
+            outfile: news.html
+            rebuild_me: 1
+          main_index:
+            filename: index.html.mtml
+            label: メインページ
+            outfile: index.html
+            rebuild_me: 1
+          style_bp_css:
+            filename: style_bp.css.mtml
+            label: スタイルシートBP
+            outfile: style_bp.css
+            rebuild_me: 1
+          styles:
+            filename: styles.css.mtml
+            label: スタイルシート
+            outfile: styles.css
+            rebuild_me: 1
+        individual:
+          entry:
+            filename: entry.mtml
+            label: 記事
+            mappings:
+              individual:
+                archive_type: Individual
+                file_template: "%y/%m/%-f"
+                preferred: 1
+          entry_1:
+            filename: entry_1.mtml
+            label: aaa
+            mappings:
+              individual:
+                archive_type: Individual
+                file_template: "%y/%m/%-b/%i"
+                preferred: 0
+        module:
+          archive_list:
+            filename: archive_list.mtml
+            label: archive_list
+          breadcrumbs:
+            filename: breadcrumbs.mtml
+            label: breadcrumbs
+          common_bottom_js:
+            filename: common_bottom_js.mtml
+            label: common_bottom_js
+          common_stylesheet:
+            filename: common_stylesheet.mtml
+            label: common_stylesheet
+          config:
+            filename: config.mtml
+            label: config
+          footer:
+            filename: footer.mtml
+            label: footer
+          gototop:
+            filename: gototop.mtml
+            label: gototop
+          header:
+            filename: header.mtml
+            label: header
+        page:
+          webpage:
+            filename: webpage.mtml
+            label: ウェブページ
+            mappings:
+              page:
+                archive_type: Page
+                file_template: "%-c/%-f"
+                preferred: 1
+        system:
+          404_error:
+            filename: 404_error.mtml
+            label: 404 エラー
+    importer: template_set
+
