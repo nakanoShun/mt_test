@@ -1,0 +1,52 @@
+<!DOCTYPE html><$mt:Include module="config" strip_linefeeds="1"$>
+<html lang="ja" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="UTF-8">
+<title><$mt:PageTitle encode_html="1"$> | <$mt:BlogName encode_html="1"$></title>
+<meta name="description" content="<$mt:BlogName encode_html="1"$> <$mt:PageTitle encode_html="1"$>">
+<meta name="keywords" content="<$mt:GetVar name="meta_keywords" encode_html="1"$>,<$mt:PageTitle encode_html="1"$>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" href="<$mt:BlogURL encode_html="1"$>images/favicon.ico">
+<link rel="start" href="<$mt:BlogURL encode_html="1"$>">
+<$mt:CanonicalLink$>
+<!-- Open Graph Protocol -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<mt:Else><$mt:Var name="blog_lang"$></mt:If>">
+<meta property="og:title" content="<$mt:PageTitle encode_html="1"$> | <$mt:BlogName encode_html="1"$>">
+<meta property="og:url" content="<$mt:PagePermalink encode_html="1"$>">
+<meta property="og:description" content="<$mt:BlogName encode_html="1"$> <$mt:PageTitle encode_html="1"$>">
+<meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+<meta property="og:image" content="<$mt:BlogURL encode_html="1"$>images/ogimage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@<$mt:Var name='twitterVia'$>">
+<meta name="twitter:title" content="<$mt:PageTitle encode_html="1"$> | <$mt:BlogName encode_html="1"$>">
+<meta name="twitter:description" content="<$mt:PageExcerpt remove_html="1" encode_html="1"$>">
+<meta name="twitter:image" content="<$mt:BlogURL encode_html="1"$>images/ogimage.jpg">
+<!-- Microdata -->
+<meta itemprop="description" content="<$mt:BlogName encode_html="1"$> <$mt:PageTitle encode_html="1"$>">
+<link itemprop="url" href="<$mt:PagePermalink encode_html="1"$>">
+<link itemprop="image" href="<$mt:BlogURL encode_html="1"$>images/ogimage.jpg">
+<$mt:Include module="common_stylesheet"$>
+</head>
+<body>
+<$mt:Include module="header"$>
+  <main id="main" class="site-main">
+  <article class="contents">
+              <article>
+                <div class="block">
+                    <header class="ttl_page">
+                    <h1><$mt:PageTitle$></h1>
+                    </header>
+                    <div>
+      <$mt:PageBody$>
+      <$mt:PageMore$>
+                    </div>
+                </div>
+            </article>
+  </article>
+  </main>
+  <$mt:Include module="footer"$>
+  <$mt:Include module="common_bottom_js"$>
+</body>
+</html>

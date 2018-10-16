@@ -1,0 +1,17 @@
+<section class="breadcrumbs">
+  <div class="mt-container">
+    <ul class="breadcrumbs__list">
+      <li><a href="<$mt:BlogRelativeURL$>">トップ</a></li>
+        <mt:ParentFolders>
+        <li>
+          <mt:Pages>
+            <a href="<$mt:PagePermalink$>"><$mt:FolderLabel encode_html="1"$></a>
+            <mt:Else>
+            <$mt:FolderLabel encode_html="1"$>
+          </mt:Pages>
+        </li>
+        </mt:ParentFolders>
+      <li><span><$mt:PageTitle encode_html="1"$></span></li>
+    </ul>
+  </div>
+</section>
